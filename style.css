@@ -1,3 +1,4 @@
+/* style.css */
 :root {
   --bg: #ffffff;
   --text: #000000;
@@ -39,12 +40,13 @@ footer {
   padding: 1rem;
 }
 
-.profile-pic {
-  width: 140px;
-  height: 140px;
+.profile-pic-small {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
+  margin: 1rem auto;
+  display: block;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
@@ -57,12 +59,19 @@ footer {
   margin-top: 1.5rem;
 }
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
 nav button {
   background-color: transparent;
   color: var(--text);
   border: 1px solid var(--accent);
   padding: 0.4rem 0.8rem;
-  margin: 0.3rem;
   border-radius: var(--radius);
   font-weight: bold;
   cursor: pointer;
@@ -126,5 +135,31 @@ a:hover {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-pic-small {
+    width: 80px;
+    height: 80px;
+  }
+  nav {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  nav button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .card {
+    padding: 1.2rem;
+  }
+  .container {
+    padding: 0.5rem;
+  }
+  header,
+  footer {
+    padding: 1.2rem 0.8rem;
   }
 }
